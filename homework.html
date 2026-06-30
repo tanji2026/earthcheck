@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Every Great Event Leaves a Legacy — Adelaide Convention Centre</title>
+<style>
+:root{--bg:#faf8f3;--deep:#0e2b25;--green:#1f6f5c;--green2:#3f9c82;--blue:#355d78;--sand:#d6a45a;--sand-l:#f3dfb6;--ink:#16221d;--muted:#637068;--line:rgba(20,40,35,0.12);--glass:rgba(255,255,255,0.6);--glass-brd:rgba(255,255,255,0.7);--radius:18px;--shadow:0 30px 60px -24px rgba(14,43,37,0.28);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;overflow-x:hidden}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-0.02em}
+p{margin:0}
+button{font-family:inherit;outline:none}
+button:focus-visible{outline:2px solid var(--sand);outline-offset:2px}
+input{font-family:inherit;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:14px;width:100%;margin-top:4px}
+input:focus{outline:none;border-color:var(--green)}
+.scene{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 7vw 90px;overflow:hidden}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in,.rv.show{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:.05s} .rv.d2{transition-delay:.18s} .rv.d3{transition-delay:.32s} .rv.d4{transition-delay:.46s} .rv.d5{transition-delay:.6s} .rv.d6{transition-delay:.74s}
+.navdots{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;gap:14px}
+.navdots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(20,40,35,0.18);cursor:pointer;padding:0;transition:.3s}
+.navdots button.active{background:var(--sand);transform:scale(1.5)}
+.brandmark{position:fixed;top:24px;left:32px;z-index:80;font-weight:800;font-size:14px;letter-spacing:.04em;color:var(--deep);display:flex;align-items:center;gap:8px;transition:color .3s}
+.brandmark .dot{width:9px;height:9px;border-radius:50%;background:var(--sand)}
+.btn{border:none;cursor:pointer;font-weight:700;font-size:15px;padding:16px 30px;border-radius:50px;transition:.3s var(--ease);letter-spacing:.01em}
+.btn:disabled{opacity:0.5;cursor:not-allowed;transform:none!important}
+.btn-primary{background:var(--deep);color:#fdf9ee;box-shadow:var(--shadow)}
+.btn-primary:hover:not(:disabled){background:#0a1f1a;transform:translateY(-3px)}
+.btn-light{background:#fff;color:var(--deep)}
+.btn-light:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 14px 30px -10px rgba(0,0,0,.3)}
+.eyebrow{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--sand);margin-bottom:16px}
+#langToggle{position:fixed;top:20px;right:26px;z-index:100;background:var(--glass);backdrop-filter:blur(8px);border:1px solid var(--glass-brd);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;color:var(--deep);cursor:pointer;box-shadow:var(--shadow)}
+#langToggle:hover{background:#fff}
+.dark-theme-mark #langToggle{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)}
+.dark-theme-mark .brandmark{color:#fff}
+#s1{background:radial-gradient(circle at 15% 15%,rgba(63,156,130,.22),transparent 45%),radial-gradient(circle at 85% 85%,rgba(53,93,120,.22),transparent 45%),linear-gradient(160deg,#0e2b25,#123a32 55%,#0c2622);color:#fdf9ee;text-align:center}
+.skyline{position:absolute;bottom:0;left:0;width:100%;height:46%;opacity:.5;pointer-events:none}
+.river{position:absolute;bottom:0;left:0;width:100%;height:18%;background:linear-gradient(180deg,rgba(63,156,130,.15),rgba(63,156,130,.45));filter:blur(2px)}
+.hero-h{font-size:clamp(38px,6.4vw,76px);line-height:1.05;max-width:980px}
+.hero-s{margin-top:22px;max-width:600px;font-size:18px;color:#cfe3dd;line-height:1.65}
+.scrolldown{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#9fc4ba;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scrolldown .line{width:1px;height:28px;background:linear-gradient(180deg,#9fc4ba,transparent);animation:dn 1.8s ease-in-out infinite}
+@keyframes dn{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+#s2{background:linear-gradient(180deg,#faf8f3,#f3eee0)}
+.profile-card{width:100%;max-width:440px;background:var(--glass);backdrop-filter:blur(18px);border:1px solid var(--glass-brd);border-radius:24px;padding:36px;box-shadow:var(--shadow)}
+.pc-top{display:flex;align-items:center;gap:16px}
+.avatar-circle{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--green2),var(--blue));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px;flex:0 0 58px}
+.pc-top h3{font-size:19px}
+.pc-top .role{font-size:12.5px;color:var(--muted);margin-top:3px}
+.pc-divider{height:1px;background:var(--line);margin:22px 0}
+.pc-label{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:8px}
+.pc-event{font-size:16px;font-weight:700;color:var(--deep);margin-bottom:20px}
+.need-list{display:flex;flex-direction:column;gap:9px}
+.need-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink)}
+.need-item .b{width:6px;height:6px;border-radius:50%;background:var(--sand);flex:0 0 6px}
+.edit-btn{background:transparent;border:none;color:var(--sand);font-size:12px;font-weight:700;cursor:pointer;padding:4px;margin-left:auto}
+.edit-btn:hover{text-decoration:underline}
+#s3{background:linear-gradient(180deg,#f3eee0,#eef2ec)}
+.upload-wrap{width:100%;max-width:620px;text-align:center}
+.dropzone{border:2px dashed #aab3ac;border-radius:20px;padding:46px 30px;background:rgba(0,0,0,.025);cursor:pointer;transition:.3s;position:relative;opacity:.62;filter:grayscale(.55)}
+.dropzone:hover,.dropzone:focus-within{opacity:.85;filter:grayscale(.25);background:rgba(63,156,130,.06);border-color:var(--green2)}
+.dropzone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.dropzone .dz-icon{width:46px;height:46px;color:var(--muted);margin:0 auto 14px}
+.file-chip{display:none;margin:22px auto 0;max-width:280px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;align-items:center;gap:10px;box-shadow:0 10px 24px -12px rgba(0,0,0,.2);animation:chipIn .6s var(--ease) forwards}
+@keyframes chipIn{from{transform:translate(0,-20px) scale(.9);opacity:0}to{transform:translate(0,0) scale(1);opacity:1}}
+.adelala-zone{display:none;margin-top:46px;flex-direction:column;align-items:center;gap:10px;animation:chipIn .6s .3s var(--ease) backwards}
+.adelala-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--sand),var(--green2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;box-shadow:0 0 0 0 rgba(214,164,90,.4);animation:ringpulse 2.6s ease-in-out infinite}
+@keyframes ringpulse{0%{box-shadow:0 0 0 0 rgba(214,164,90,.45)}70%{box-shadow:0 0 0 18px rgba(214,164,90,0)}100%{box-shadow:0 0 0 0 rgba(214,164,90,0)}}
+.adelala-bubble{max-width:480px;background:#fff;border-radius:18px;border:1px solid var(--line);padding:20px 24px;font-size:15px;line-height:1.65;color:var(--ink);box-shadow:var(--shadow);min-height:30px;text-align:left;margin-top:6px;white-space:pre-wrap;display:none}
+.cursor-blink{display:inline-block;width:2px;height:16px;background:var(--green);vertical-align:-2px;animation:blink 1s step-end infinite;margin-left:1px}
+@keyframes blink{50%{opacity:0}}
+#s4{background:linear-gradient(180deg,#eef2ec,#0e2b25 120%)}
+.map-shell{display:flex;gap:34px;width:100%;max-width:1180px;align-items:flex-start;flex-wrap:wrap;justify-content:center}
+.map-canvas{flex:1 1 520px;min-width:320px;aspect-ratio:1.3/1;border-radius:22px;position:relative;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(160deg,#123a32,#0a2622)}
+.map-canvas::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 50px),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 50px)}
+.hotspot{position:absolute;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fdf9ee;transition:.3s var(--ease);padding:0}
+.hotspot:hover,.hotspot.active{background:var(--sand);border-color:var(--sand);color:#10241f;transform:scale(1.14);box-shadow:0 0 0 9px rgba(214,164,90,.18);z-index:10}
+.hotspot .pulse{position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(214,164,90,.5);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.85);opacity:.8}100%{transform:scale(1.55);opacity:0}}
+.map-panel{flex:1 1 380px;min-width:300px;background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--glass-brd);border-radius:22px;padding:30px;box-shadow:var(--shadow);min-height:420px;display:flex;flex-direction:column}
+.map-panel.empty{align-items:center;justify-content:center;text-align:center;color:#cfe3dd;background:rgba(255,255,255,.08)}
+.stat-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.stat-pill{flex:1;min-width:120px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.visited-track{display:flex;gap:7px;margin-top:auto;padding-top:16px;flex-wrap:wrap}
+.vchip{font-size:10.5px;padding:5px 10px;border-radius:20px;background:rgba(255,255,255,.5);color:var(--muted);font-weight:700}
+.vchip.on{background:var(--green);color:#fff}
+#s5{background:radial-gradient(circle at 50% 30%,rgba(214,164,90,.18),transparent 55%),linear-gradient(180deg,#0e2b25,#1a4338);color:#fdf9ee;text-align:center}
+.lunch-stage{position:relative;width:100%;max-width:880px;height:420px;margin-top:10px}
+.people-dot{position:absolute;width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.25);animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.logo-bubble{position:absolute;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px 18px;font-weight:800;font-size:13px;color:#fdf9ee;cursor:pointer;transition:.3s var(--ease);animation:bob 5s ease-in-out infinite}
+.logo-bubble:hover{background:var(--sand);color:#10241f;transform:scale(1.08);z-index:20}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.company-card{position:absolute;max-width:340px;background:#fff;border-radius:18px;padding:24px;box-shadow:0 30px 60px -16px rgba(0,0,0,.4);text-align:left;color:var(--ink);z-index:30;display:none}
+.company-card .close{position:absolute;top:12px;right:14px;background:transparent;border:none;cursor:pointer;color:var(--muted);font-size:18px;padding:4px}
+#s6{background:linear-gradient(180deg,#1a4338,#faf8f3 18%)}
+.notif{position:relative;background:#fff;border-radius:16px;padding:16px 22px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow);margin-bottom:36px;transform:translateX(420px);opacity:0;transition:transform .8s var(--ease),opacity .8s var(--ease)}
+.notif.show{transform:translateX(0);opacity:1}
+.dash-card{width:100%;max-width:880px;background:#fff;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+.dash-head{background:linear-gradient(135deg,var(--deep),var(--green));color:#fdf9ee;padding:34px 38px 26px;position:relative}
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:30px 38px 10px}
+.dash-tile{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px;opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.dash-tile.in{opacity:1;transform:translateY(0)}
+.contrib-box{margin:16px 38px;background:linear-gradient(160deg,#fdf6e7,#fff);border:1px solid var(--sand-l);border-radius:16px;padding:22px}
+#s7{background:#faf8f3}
+.li-card{width:100%;max-width:520px;background:#fff;border-radius:20px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+.li-top{display:flex;align-items:center;gap:12px;padding:20px 22px 14px}
+.li-body{padding:0 22px 22px;font-size:14.5px;line-height:1.65;color:var(--ink);min-height:120px;white-space:pre-wrap}
+.li-tagrow{display:flex;gap:8px;flex-wrap:wrap;padding:0 22px 22px}
+#s8{background:radial-gradient(circle at 50% 40%,rgba(63,156,130,.14),transparent 55%),linear-gradient(180deg,#0a1f1c,#0e2b25);color:#fdf9ee;min-height:115vh}
+.eco-canvas{position:relative;width:100%;max-width:760px;aspect-ratio:1/1;margin-top:50px}
+.eco-node{position:absolute;width:78px;height:78px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:800;color:#10241f;cursor:pointer;background:var(--sand);border:none;box-shadow:0 0 0 0 rgba(214,164,90,.35);transition:transform .3s,box-shadow .3s;padding:4px;opacity:0;transform:scale(.3)}
+.eco-node.show{opacity:1;transform:scale(1);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.eco-node:hover{transform:scale(1.1);z-index:10}
+.eco-node.center{width:108px;height:108px;background:#fff;color:var(--deep);font-size:12.5px;z-index:5}
+.eco-node.center::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);animation:ecopulse 3s ease-out infinite}
+@keyframes ecopulse{0%{transform:scale(.9);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+.eco-lines{position:absolute;inset:0;width:100%;height:100%}
+.eco-lines line{stroke:rgba(214,164,90,.45);stroke-width:1.4;stroke-dasharray:6 5;opacity:0;transition:opacity 1s var(--ease)}
+.eco-lines line.show{opacity:1;animation:dashmove 6s linear infinite}
+@keyframes dashmove{to{stroke-dashoffset:-200}}
+.eco-panel{position:fixed;top:0;right:-420px;width:380px;height:100%;background:#fff;color:var(--ink);z-index:100;padding:80px 32px 32px;box-shadow:-30px 0 60px -20px rgba(0,0,0,.4);transition:right .45s var(--ease);overflow-y:auto}
+.eco-panel.open{right:0}
+.eco-panel .close-x{position:absolute;top:28px;right:28px;background:transparent;border:none;cursor:pointer;font-size:22px;color:var(--muted)}
+.scrim{position:fixed;inset:0;background:rgba(10,25,22,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .4s}
+.scrim.show{opacity:1;pointer-events:auto}
+#s9{background:radial-gradient(circle at 50% 30%,rgba(63,156,130,.2),transparent 55%),linear-gradient(180deg,#0a1f1c,#06140f);color:#fdf9ee;text-align:center;min-height:110vh}
+.chain{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:50px}
+.chain .ch-item{font-size:clamp(20px,3vw,30px);font-weight:800;opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.chain .ch-item.show{opacity:1;transform:translateY(0)}
+.chain .arrow{color:var(--sand);font-size:18px;opacity:0;transition:opacity .5s}
+.chain .arrow.show{opacity:1}
+@media(max-width:880px){.navdots{right:14px;gap:10px}.navdots button{width:7px;height:7px}.brandmark{font-size:11.5px;top:16px;left:16px}.scene{padding:100px 6vw 70px}.map-shell{flex-direction:column}.map-canvas{width:100%}.eco-canvas{max-width:520px}.dash-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.scene{padding:110px 5.5vw 70px;min-height:auto}#s1,#s8,#s9{min-height:100vh}.hero-h{font-size:clamp(32px,9vw,52px)}.dropzone{padding:34px 20px}.lunch-stage{height:460px}.dash-grid{padding:20px;gap:10px}.eco-node{width:58px;height:58px;font-size:9px}.eco-node.center{width:84px;height:84px;font-size:10px}.eco-panel{width:86vw}.navdots{display:none}}
+</style>
+</head>
+<body>
+
+<button id="langToggle" aria-label="Toggle Language">EN / 中文</button>
+
+<div class="brandmark"><span class="dot"></span>Adelaide Convention Centre</div>
+
+<div class="navdots" aria-label="Page navigation" id="navdots">
+  <button data-id="s1" class="active" aria-label="Go to section s1"></button>
+  <button data-id="s2" aria-label="Go to section s2"></button>
+  <button data-id="s3" aria-label="Go to section s3"></button>
+  <button data-id="s4" aria-label="Go to section s4"></button>
+  <button data-id="s5" aria-label="Go to section s5"></button>
+  <button data-id="s6" aria-label="Go to section s6"></button>
+  <button data-id="s7" aria-label="Go to section s7"></button>
+  <button data-id="s8" aria-label="Go to section s8"></button>
+  <button data-id="s9" aria-label="Go to section s9"></button>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="eco-panel" id="ecoPanel">
+  <button class="close-x" id="closeEcoPanel" aria-label="Close panel">&times;</button>
+  <div id="ecoPanelContent"></div>
+</div>
+
+<section class="scene" id="s1">
+  <div class="skyline"></div><div class="river"></div>
+  <div class="eyebrow rv d1" data-i18n="s1_eyebrow">A fifteen-year sustainability journey</div>
+  <h1 class="hero-h rv d2" data-i18n="s1_title">Every Great Event<br>Leaves a Legacy.</h1>
+  <p class="hero-s rv d3" data-i18n="s1_sub">Your event is more than a gathering. It becomes part of a sustainability journey built over fifteen years.</p>
+  <div class="rv d4" style="margin-top:42px">
+    <button class="btn btn-light scroll-to" data-target="s2" data-i18n="s1_btn">Begin My Event &rarr;</button>
+  </div>
+  <div class="scrolldown"><span data-i18n="s1_scroll">Scroll</span><span class="line"></span></div>
+</section>
+
+<section class="scene" id="s2">
+  <div class="eyebrow rv d1" data-i18n="s2_eyebrow">Step 1 &middot; Meet your event</div>
+  <h2 class="rv d2" style="font-size:clamp(26px,3.4vw,38px);color:var(--deep);margin-bottom:30px" data-i18n="s2_title">Let's get to know you.</h2>
+  <div class="profile-card rv d3" id="profileCard">
+    <div id="profileView">
+      <div class="pc-top">
+        <div class="avatar-circle" id="profileAvatar">Z</div>
+        <div><h3 id="pvName">Zoe</h3><div class="role" id="pvRole">Marketing Director</div></div>
+        <button class="edit-btn" id="btnEditProfile" data-i18n="s2_edit">Edit</button>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-label" data-i18n="s2_org">Organising</div>
+      <div class="pc-event" id="pvEvent">South Australian Business Index 2026</div>
+      <div class="pc-label" id="pvNeedsLabel">What Zoe needs</div>
+      <div class="need-list">
+        <div class="need-item"><span class="b"></span><span data-i18n="s2_need1">A professionally run event</span></div>
+        <div class="need-item"><span class="b"></span><span data-i18n="s2_need2">Clear ESG reporting</span></div>
+        <div class="need-item"><span class="b"></span><span data-i18n="s2_need3">Brand reputation &amp; visibility</span></div>
+      </div>
+      <button class="btn btn-primary scroll-to" data-target="s3" style="margin-top:26px;width:100%" data-i18n="s2_btn">Continue Planning &rarr;</button>
+    </div>
+    <form id="profileForm" style="display:none">
+      <div class="pc-top" style="margin-bottom:20px">
+        <div class="avatar-circle" id="formAvatar">Z</div>
+        <div style="flex:1">
+          <input required id="inName" value="Zoe">
+          <input required id="inRole" value="Marketing Director">
+        </div>
+      </div>
+      <div class="pc-label" data-i18n="s2_org">Organising</div>
+      <input required id="inEvent" value="South Australian Business Index 2026" style="margin-bottom:20px">
+      <button type="submit" class="btn btn-primary" style="width:100%" data-i18n="s2_save">Save Profile</button>
+    </form>
+  </div>
+</section>
+
+<section class="scene" id="s3">
+  <div class="upload-wrap">
+    <div class="eyebrow rv d1" data-i18n="s3_eyebrow">Step 2 &middot; Personalise</div>
+    <h2 class="rv d2" style="font-size:clamp(26px,3.6vw,38px);color:var(--deep);margin-bottom:14px" data-i18n="s3_title">Let's personalise your experience.</h2>
+    <p class="rv d3" style="color:var(--muted);font-size:15px;margin-bottom:36px" data-i18n="s3_sub">Upload your company profile and Adelala will tailor today's sustainability journey to your organisation.</p>
+    
+    <div class="dropzone rv d4" id="dropzone">
+      <input type="file" id="fileUpload" accept=".pdf,.doc,.docx" aria-label="Upload Company Profile">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+      <div style="font-weight:700;color:var(--ink);font-size:15.5px" data-i18n="s3_drop">Drop your Company Profile here</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:6px" data-i18n="s3_browse">or click to browse</div>
+    </div>
+
+    <div class="file-chip" id="fileChip">
+      <svg style="width:22px;height:22px;color:var(--blue);flex:0 0 22px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2Z"/><path d="M14 2v6h6"/></svg>
+      <div style="text-align:left">
+        <div style="font-size:13px;font-weight:700;color:var(--ink)" id="fcName"></div>
+        <div style="font-size:11px;color:var(--muted)"><span id="fcSize"></span> MB &middot; <span data-i18n="s3_uploaded">Uploaded</span></div>
+      </div>
+    </div>
+    
+    <div class="adelala-zone" id="adelalaZone">
+      <div class="adelala-avatar">AI</div>
+      <div style="font-size:12px;font-weight:800;color:var(--deep);letter-spacing:.03em">Adelala <span style="color:var(--muted);font-weight:600" data-i18n="s3_ai_desc">&middot; ACC's AI robot assistant</span></div>
+      <div class="adelala-bubble" id="adelalaBubble"><span id="aiText"></span><span class="cursor-blink" id="aiCursor"></span></div>
+    </div>
+    
+    <div style="margin-top:34px;display:none" id="s3Next">
+      <button class="btn btn-primary scroll-to" data-target="s4" data-i18n="s3_btn">Continue the Journey &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<section class="scene" id="s4">
+  <div class="eyebrow rv d1" style="color:var(--sand)" data-i18n="s4_eyebrow">Step 3 &middot; Explore</div>
+  <h2 class="rv d2" style="font-size:clamp(26px,3.6vw,40px);color:#fdf9ee;margin-bottom:10px;text-align:center" data-i18n="s4_title">Walk through the centre.</h2>
+  <p class="rv d3" style="color:#cfe3dd;text-align:center;max-width:560px;margin-bottom:40px;font-size:15px" data-i18n="s4_sub">Tap each part of the building to uncover the story behind it.</p>
+  
+  <div class="map-shell rv d4">
+    <div class="map-canvas" id="mapCanvas"></div>
+    <div class="map-panel empty" id="mapPanel">
+      <svg style="width:42px;height:42px;color:var(--green);margin-bottom:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+      <p style="max-width:240px;font-size:14.5px;line-height:1.6" data-i18n="s4_select">Select a location on the map to uncover the story behind it.</p>
+    </div>
+  </div>
+  
+  <div style="margin-top:38px;text-align:center">
+    <div style="font-size:13px;color:#cfe3dd;margin-bottom:14px" id="mapHint"></div>
+    <button class="btn btn-light scroll-to" data-target="s5" id="btnS5" disabled data-i18n="s4_btn">Join the Luncheon &rarr;</button>
+  </div>
+</section>
+
+<section class="scene" id="s5">
+  <div class="eyebrow rv d1" style="color:var(--sand)" data-i18n="s5_eyebrow">Step 4 &middot; Networking</div>
+  <h2 class="rv d2" style="font-size:clamp(26px,3.6vw,40px);margin-bottom:8px" data-i18n="s5_title">The Luncheon.</h2>
+  <p class="rv d3" style="color:#cfe3dd;max-width:520px;margin-bottom:10px;font-size:15px" data-i18n="s5_sub">Around the room, the organisations behind today's sustainability story are gathering. Tap a company to meet them.</p>
+  
+  <div class="lunch-stage rv d4" id="lunchStage"></div>
+  <div style="margin-top:30px;z-index:40">
+    <button class="btn btn-primary scroll-to" data-target="s6" data-i18n="s5_btn">View My Impact &rarr;</button>
+  </div>
+</section>
+
+<section class="scene" id="s6">
+  <div class="notif" id="notifS6">
+    <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--sand),var(--green2));flex:0 0 38px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:11px">AI</div>
+    <div>
+      <div style="font-size:14px;font-weight:700;color:var(--deep)" data-i18n="s6_notif_title">Your Sustainability Summary is Ready</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:2px" id="s6NotifSub"></div>
+    </div>
+  </div>
+  
+  <div class="dash-card rv d1">
+    <div class="dash-head">
+      <div style="font-size:11.5px;text-transform:uppercase;letter-spacing:.16em;color:var(--sand-l);font-weight:800;position:relative" data-i18n="s6_eyebrow">Sustainability Summary</div>
+      <div style="font-size:27px;margin-top:8px;position:relative" id="s6EventName"></div>
+      <div style="margin-top:8px;font-size:13.5px;color:#cfe3dd;max-width:540px;position:relative;line-height:1.55" data-i18n="s6_sub">Generated by Adelala — a personalised look at how today's event contributed to fifteen years of measurable progress.</div>
+    </div>
+    
+    <div class="dash-grid" id="dashGrid"></div>
+    
+    <div class="contrib-box">
+      <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sand);font-weight:800" data-i18n="s6_contrib">Company Contribution</div>
+      <h4 style="font-size:18px;color:var(--deep);margin-top:6px" id="s6CompName"></h4>
+      <p style="font-size:14px;color:var(--ink);line-height:1.6;margin-top:10px" data-i18n="s6_contrib_desc">Based on your profile, Adelala identified that your organisation contributed by supporting responsible event materials aligned with circular economy principles.</p>
+    </div>
+    
+    <div style="padding:0 38px 30px;display:flex;justify-content:center">
+      <button class="btn btn-primary scroll-to" data-target="s7" data-i18n="s6_btn">Generate LinkedIn Summary &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<section class="scene" id="s7">
+  <div class="eyebrow rv d1" data-i18n="s7_eyebrow">Step 6 &middot; Share your impact</div>
+  <h2 class="rv d2" style="font-size:clamp(24px,3.2vw,34px);color:var(--deep);margin-bottom:30px;text-align:center" data-i18n="s7_title">Adelala drafted this for you.</h2>
+  
+  <div class="li-card rv d3">
+    <div class="li-top">
+      <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green2))"></div>
+      <div>
+        <div style="font-size:14px;font-weight:800;color:var(--ink)" id="liName"></div>
+        <div style="font-size:11.5px;color:var(--muted)" id="liRoleEvent"></div>
+      </div>
+    </div>
+    <div class="li-body">
+      <span id="liText"></span><span class="cursor-blink" id="liCursor" style="display:none"></span>
+    </div>
+    <div class="li-tagrow" id="liTags"></div>
+  </div>
+  
+  <div style="margin-top:28px" class="rv d4">
+    <button class="btn btn-light scroll-to" data-target="s8" data-i18n="s7_btn">Meet the Ecosystem &rarr;</button>
+  </div>
+</section>
+
+<section class="scene" id="s8">
+  <h2 class="rv d1" style="font-size:clamp(28px,4vw,46px);text-align:center;max-width:760px" data-i18n="s8_title">No Sustainable Event Is Created Alone.</h2>
+  <p class="rv d2" style="margin-top:14px;color:#bcdacf;text-align:center;max-width:560px;font-size:15px;line-height:1.6" data-i18n="s8_sub">Around every event at Adelaide Convention Centre stands a living network of partners. Tap an avatar to meet them.</p>
+  
+  <div class="eco-canvas rv d3" id="ecoCanvas">
+    <svg class="eco-lines" id="ecoLines"></svg>
+  </div>
+  
+  <div style="margin-top:40px;position:relative;z-index:10" class="rv d4">
+    <button class="btn btn-primary scroll-to" data-target="s9" data-i18n="s8_btn">Finish Journey &rarr;</button>
+  </div>
+</section>
+
+<section class="scene" id="s9">
+  <div class="chain rv d1">
+    <div class="ch-item" style="font-size:clamp(20px,3vw,30px);font-weight:800" data-i18n="s9_c1">My Event</div>
+    <div class="arrow" style="color:var(--sand);font-size:18px">&darr;</div>
+    <div class="ch-item" style="font-size:clamp(20px,3vw,30px);font-weight:800" data-i18n="s9_c2">Our Impact</div>
+    <div class="arrow" style="color:var(--sand);font-size:18px">&darr;</div>
+    <div class="ch-item" style="font-size:clamp(20px,3vw,30px);font-weight:800" data-i18n="s9_c3">Our Ecosystem</div>
+    <div class="arrow" style="color:var(--sand);font-size:18px">&darr;</div>
+    <div class="ch-item" style="font-size:clamp(20px,3vw,30px);font-weight:800" data-i18n="s9_c4">Our Legacy</div>
+  </div>
+  <p class="rv d3" style="max-width:640px;font-size:16px;line-height:1.75;color:#cfe3dd;margin-top:10px" data-i18n="s9_sub">For over fifteen years, sustainability hasn't been achieved by one organisation. It has been built through every partnership, every event, and every shared decision.</p>
+  <h3 class="rv d4" style="font-size:clamp(24px,3.4vw,38px);margin-top:42px;max-width:760px;line-height:1.3" data-i18n="s9_title">Host Extraordinary Events.<br>Leave an Extraordinary Legacy.</h3>
+  <button class="rv d5" style="margin-top:30px;font-size:13px;color:#9fc4ba;text-decoration:underline;background:transparent;border:none;cursor:pointer" id="btnRestart" data-i18n="s9_btn">Start a new journey</button>
+</section>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const userConfig = {
+  apiKey: "AIzaSyDV_zgPANImB0-H_U-NIoXtIHrhtP6nVtc",
+  authDomain: "earthcheck-ea3d9.firebaseapp.com",
+  projectId: "earthcheck-ea3d9",
+  storageBucket: "earthcheck-ea3d9.firebasestorage.app",
+  messagingSenderId: "307703442399",
+  appId: "1:307703442399:web:3d2c97c8af78f60c1db26a"
+};
+
+const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : userConfig;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const globalAppId = typeof __app_id !== 'undefined' ? __app_id : 'adelaide-demo';
+
+let user = null;
+let currentLang = 'en';
+
+let state = {
+  profile: { name: 'Zoe', role: 'Marketing Director', event: 'South Australian Business Index 2026' },
+  file: null,
+  spots: new Set(),
+  activeSpot: null,
+  activeLunch: null,
+  activeEco: null,
+  aiTyped: false,
+  liTyped: false,
+  liTypingInterval: null,
+  aiTypingInterval: null
+};
+
+const dict = {
+  en: {
+    s1_eyebrow: "A fifteen-year sustainability journey",
+    s1_title: "Every Great Event<br>Leaves a Legacy.",
+    s1_sub: "Your event is more than a gathering. It becomes part of a sustainability journey built over fifteen years.",
+    s1_btn: "Begin My Event &rarr;",
+    s1_scroll: "Scroll",
+    s2_eyebrow: "Step 1 &middot; Meet your event",
+    s2_title: "Let's get to know you.",
+    s2_edit: "Edit",
+    s2_org: "Organising",
+    s2_needs: "What {name} needs",
+    s2_need1: "A professionally run event",
+    s2_need2: "Clear ESG reporting",
+    s2_need3: "Brand reputation & visibility",
+    s2_btn: "Continue Planning &rarr;",
+    s2_save: "Save Profile",
+    s3_eyebrow: "Step 2 &middot; Personalise",
+    s3_title: "Let's personalise your experience.",
+    s3_sub: "Upload your company profile and Adelala will tailor today's sustainability journey to your organisation.",
+    s3_drop: "Drop your Company Profile here",
+    s3_browse: "or click to browse",
+    s3_uploaded: "Uploaded",
+    s3_ai_desc: "&middot; ACC's AI robot assistant",
+    s3_btn: "Continue the Journey &rarr;",
+    s3_ai_msg: "Welcome, {name}.\n\nWe noticed your organisation specialises in sustainable practices. We'll personalise today's sustainability journey based on your profile.",
+    s4_eyebrow: "Step 3 &middot; Explore",
+    s4_title: "Walk through the centre.",
+    s4_sub: "Tap each part of the building to uncover the story behind it.",
+    s4_select: "Select a location on the map to uncover the story behind it.",
+    s4_btn: "Join the Luncheon &rarr;",
+    s4_hint_more: "Explored {c} of 3 needed locations.",
+    s4_hint_ready: "Explored {c} of 6 locations — ready for the luncheon.",
+    s5_eyebrow: "Step 4 &middot; Networking",
+    s5_title: "The Luncheon.",
+    s5_sub: "Around the room, the organisations behind today's sustainability story are gathering. Tap a company to meet them.",
+    s5_btn: "View My Impact &rarr;",
+    s6_notif_title: "Your Sustainability Summary is Ready",
+    s6_notif_sub: "Prepared by Adelala, ACC's AI robot, for {name}",
+    s6_eyebrow: "Sustainability Summary",
+    s6_sub: "Generated by Adelala — a personalised look at how today's event contributed to fifteen years of measurable progress.",
+    s6_contrib: "Company Contribution",
+    s6_org_default: "Your Organisation",
+    s6_contrib_desc: "Based on your profile, Adelala identified that your organisation contributed by supporting responsible event materials aligned with circular economy principles.",
+    s6_btn: "Generate LinkedIn Summary &rarr;",
+    s7_eyebrow: "Step 6 &middot; Share your impact",
+    s7_title: "Adelala drafted this for you.",
+    s7_msg: "Proud to participate in the {event} at Adelaide Convention Centre.\n\nOur event contributed to 97% locally sourced catering, 99% landfill diversion, and supported responsible, circular paper packaging.\n\nGrateful to be part of a community building sustainability together, one event at a time.",
+    s7_btn: "Meet the Ecosystem &rarr;",
+    s8_title: "No Sustainable Event Is Created Alone.",
+    s8_sub: "Around every event at Adelaide Convention Centre stands a living network of partners. Tap an avatar to meet them.",
+    s8_overview: "Overview",
+    s8_contrib: "Contribution to the ecosystem",
+    s8_why: "Why it matters",
+    s8_btn: "Finish Journey &rarr;",
+    s9_c1: "My Event",
+    s9_c2: "Our Impact",
+    s9_c3: "Our Ecosystem",
+    s9_c4: "Our Legacy",
+    s9_sub: "For over fifteen years, sustainability hasn't been achieved by one organisation. It has been built through every partnership, every event, and every shared decision.",
+    s9_title: "Host Extraordinary Events.<br>Leave an Extraordinary Legacy.",
+    s9_btn: "Start a new journey",
+    dash: [
+      {l: 'Local Procurement', n: '97%', s: 'Sourced from South Australia'},
+      {l: 'Waste', n: '99%', s: 'Diverted from landfill'},
+      {l: 'Water', n: '73%↓', s: 'Below industry average'},
+      {l: 'Community', n: '240+', s: 'Meals redistributed'},
+      {l: 'Energy', n: '40%↓', s: 'Since 2018'},
+      {l: 'Paper', n: '100%', s: 'FSC-certified materials used'}
+    ]
+  },
+  zh: {
+    s1_eyebrow: "十五年的永續發展旅程",
+    s1_title: "每一場偉大的活動<br>都會留下傳奇。",
+    s1_sub: "您的活動不僅是一場聚會，它將成為阿德雷德會議中心十五年永續發展旅程的一部分。",
+    s1_btn: "開始我的活動 &rarr;",
+    s1_scroll: "向下捲動",
+    s2_eyebrow: "第一步 &middot; 遇見您的活動",
+    s2_title: "讓我們認識您。",
+    s2_edit: "編輯",
+    s2_org: "正在籌辦",
+    s2_needs: "{name} 的需求",
+    s2_need1: "專業流暢的活動體驗",
+    s2_need2: "清晰的 ESG 永續報告",
+    s2_need3: "提升品牌聲譽與曝光",
+    s2_btn: "繼續規劃 &rarr;",
+    s2_save: "儲存個人檔案",
+    s3_eyebrow: "第二步 &middot; 個人化體驗",
+    s3_title: "量身打造您的旅程。",
+    s3_sub: "上傳您的公司簡介，AI 助理 Adelala 將為您的組織客製化專屬的永續發展旅程。",
+    s3_drop: "將公司簡介拖曳至此",
+    s3_browse: "或點擊瀏覽檔案",
+    s3_uploaded: "已上傳",
+    s3_ai_desc: "&middot; ACC 專屬 AI 助理",
+    s3_btn: "繼續旅程 &rarr;",
+    s3_ai_msg: "歡迎，{name}。\n\n我們注意到您的組織致力於永續實踐。我們將根據您的個人檔案，為您量身打造今天的永續發展體驗。",
+    s4_eyebrow: "第三步 &middot; 探索場館",
+    s4_title: "漫步會議中心。",
+    s4_sub: "點擊建築的各個區塊，發掘背後的永續故事。",
+    s4_select: "請在地圖上選擇一個地點以查看詳細故事。",
+    s4_btn: "參加午宴 &rarr;",
+    s4_hint_more: "已探索 {c} 個地點（需探索 3 個）。",
+    s4_hint_ready: "已探索 {c} 個地點 — 準備前往午宴。",
+    s5_eyebrow: "第四步 &middot; 商業交流",
+    s5_title: "永續午宴。",
+    s5_sub: "會場周圍聚集了推動今日永續故事的各大組織。點擊公司名稱來認識他們。",
+    s5_btn: "查看我的影響力 &rarr;",
+    s6_notif_title: "您的永續摘要已準備就緒",
+    s6_notif_sub: "由 AI 助理 Adelala 為 {name} 準備",
+    s6_eyebrow: "永續發展摘要",
+    s6_sub: "由 Adelala 生成 — 客製化呈現今天的活動如何貢獻於十五年來的具體進展。",
+    s6_contrib: "您的企業貢獻",
+    s6_org_default: "您的組織",
+    s6_contrib_desc: "根據您的檔案，Adelala 分析出您的組織透過支持符合循環經濟原則的負責任活動材料，做出了具體貢獻。",
+    s6_btn: "生成 LinkedIn 貼文 &rarr;",
+    s7_eyebrow: "第六步 &middot; 分享影響力",
+    s7_title: "Adelala 為您擬定了草稿。",
+    s7_msg: "很榮幸能在阿德雷德會議中心參與 {event}。\n\n我們的活動促成了 97% 在地採購餐飲、99% 廢棄物免於掩埋，並支持了負責任的循環紙本包裝。\n\n感恩能成為這個社群的一份子，透過每一場活動，共同建立永續未來。",
+    s7_btn: "認識生態系 &rarr;",
+    s8_title: "沒有一場永續活動是獨自完成的。",
+    s8_sub: "阿德雷德會議中心的每一場活動背後，都有一個充滿活力的合作夥伴網絡。點擊頭像來認識他們。",
+    s8_overview: "簡介",
+    s8_contrib: "對生態系的貢獻",
+    s8_why: "為何重要",
+    s8_btn: "完成旅程 &rarr;",
+    s9_c1: "我的活動",
+    s9_c2: "我們的影響力",
+    s9_c3: "我們的生態系",
+    s9_c4: "我們的傳奇",
+    s9_sub: "十五年來，永續發展從來不是單一組織的成就。它是透過每一次合作、每一場活動，以及每一個共同決策所建立起來的。",
+    s9_title: "舉辦非凡的活動。<br>留下非凡的傳奇。",
+    s9_btn: "展開新旅程",
+    dash: [
+      {l: '在地採購', n: '97%', s: '食材來自南澳在地'},
+      {l: '廢棄物', n: '99%', s: '免於垃圾掩埋處理'},
+      {l: '水資源', n: '73%↓', s: '低於業界平均用水量'},
+      {l: '社區回饋', n: '240+', s: '重新分配剩食餐盒'},
+      {l: '能源', n: '40%↓', s: '自 2018 年起減少'},
+      {l: '紙張材料', n: '100%', s: '使用 FSC 認證環保材料'}
+    ]
+  }
+};
+
+const mapData = {
+  kitchen: { icon: '<path d="M4 19h16M6 19V9a6 6 0 0112 0v10M9 9V6M12 9V5M15 9V6"/>', top: 14, left: 12, en: {role:'Honest Goodness Catering', title:'The Kitchen', story:"Today's menu sources 97% of ingredients from South Australian suppliers. Meet the local producers behind today's lunch.", stats:[["97%","Locally sourced"],["1000s","SA suppliers supported"]]}, zh: {role:'誠食餐飲', title:'廚房', story:"今天的菜單有 97% 的食材來自南澳供應商。認識今天午餐背後的在地生產者。", stats:[["97%","在地採購"],["1000s","支持南澳供應商"]]} },
+  waste: { icon: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>', top: 14, left: 72, en: {role:'WasteMaster System', title:'The Waste Hub', story:"Every event runs through ACC's WasteMaster system — sorting, processing and redirecting waste away from landfill at the highest rate of any convention centre in Australia.", stats:[["99%","Landfill diversion"],["#1","Highest rate in Australia"]]}, zh: {role:'廢棄物管理系統', title:'資源回收中心', story:"每場活動都會經過 ACC 的系統—分類、處理並將廢棄物轉移掩埋場，其比例為全澳洲會議中心之冠。", stats:[["99%","免於掩埋"],["#1","全澳洲最高轉移率"]]} },
+  water: { icon: '<path d="M12 3s7 8 7 13a7 7 0 01-14 0c0-5 7-13 7-13Z"/>', top: 48, left: 42, en: {role:'Smart Water Systems', title:'Water', story:"Smart metering and efficient fixtures mean your event draws a fraction of the water a comparable venue would use.", stats:[["73%↓","Below industry average"],["12%↓","Potable use reduced in 5yrs"]]}, zh: {role:'智慧水資源系統', title:'水資源', story:"智慧電表與高效率的設備，意味著您的活動用水量僅為一般同級場館的一小部分。", stats:[["73%↓","低於業界平均"],["12%↓","五年內減少飲用水使用"]]} },
+  energy: { icon: '<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/>', top: 48, left: 78, en: {role:'Building Efficiency', title:'Energy', story:"Fifteen years of continuous improvement to lighting, climate control and building systems power your event more efficiently than ever.", stats:[["40%+","Reduction since 2018"],["15+yrs","Continuous improvement"]]}, zh: {role:'建築能源效率', title:'能源', story:"十五年來在照明、空調與建築系統上的持續改善，讓您的活動比以往更節能。", stats:[["40%+","自2018年起減少"],["15+yrs","持續改善歷程"]]} },
+  community: { icon: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M14.5 15c2.6.2 4.5 1.8 4.5 5"/>', top: 78, left: 18, en: {role:'Food Redistribution', title:'Community', story:"Surplus food from your event becomes meals for the local community — extending your event's impact beyond its final session.", stats:[["1000s","Meals redistributed yearly"],["Local","Charity partnerships"]]}, zh: {role:'食物重新分配', title:'社區回饋', story:"活動中剩餘的食物將成為當地社區的餐點—讓活動的影響力延續到閉幕之後。", stats:[["1000s","每年重新分配餐盒"],["在地","慈善夥伴關係"]]} },
+  culture: { icon: '<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18M3 12h18"/>', top: 78, left: 60, en: {role:'First Nations Engagement', title:'Culture', story:"ACC's sustainability story is also a cultural one, built on genuine First Nations engagement and ongoing cultural awareness initiatives.", stats:[["Ongoing","Cultural awareness programs"],["Ongoing","First Nations partnerships"]]}, zh: {role:'原住民參與', title:'文化', story:"ACC 的永續故事也是一個文化故事，建立在真誠的原住民參與以及持續的文化意識計畫之上。", stats:[["持續","文化意識計畫"],["持續","原住民夥伴關係"]]} }
+};
+
+const lunchData = {
+  detmold: { top: 18, left: 38, delay: 0, en: {name:'Detmold Group', tag:'Sustainable Packaging Leader', points:['FSC-certified paper packaging', 'Circular material innovation', 'Sustainable packaging leadership']}, zh: {name:'Detmold 集團', tag:'永續包裝領導者', points:['FSC 認證紙本包裝', '循環材料創新', '永續包裝領導地位']} },
+  almondco: { top: 55, left: 8, delay: 0.4, en: {name:'Almondco Australia', tag:'Local Food Systems', points:['Locally grown almonds supplied by Australian growers', 'Resilient local food systems', 'Shorter, more sustainable supply chains']}, zh: {name:'Almondco 澳洲', tag:'在地食物系統', points:['由澳洲農民供應的在地杏仁', '具韌性的在地食物系統', '更短、更永續的供應鏈']} },
+  leed: { top: 62, left: 60, delay: 0.8, en: {name:'Leed Engineering & Construction', tag:'Water Infrastructure', points:['Develops sustainable water infrastructure', 'Strengthens community resilience']}, zh: {name:'Leed 工程建設', tag:'水利基礎設施', points:['開發永續水利基礎設施', '強化社區韌性']} },
+  indaily: { top: 8, left: 70, delay: 1.2, en: {name:'InDaily', tag:'Storytelling & Recognition', points:["Connects South Australia's business community", 'Recognises leadership and shares stories of innovation']}, zh: {name:'InDaily', tag:'故事與表揚', points:['連結南澳商業社群', '表揚領導力並分享創新故事']} },
+  hlb: { top: 78, left: 32, delay: 1.6, en: {name:'HLB Mann Judd', tag:'Transparent Business Data', points:['Provides independent business data', 'Transparent rankings for evidence-based decisions']}, zh: {name:'HLB Mann Judd', tag:'透明商業數據', points:['提供獨立商業數據', '基於證據的決策透明排名']} }
+};
+
+const ecoData = [
+  { id: 'acc', center: true, en: {name:'Adelaide Convention Centre', tag:'The Host', overview:'Fifteen years of sustainability leadership.', contribution:'Provides the platform where every partnership and event comes together.', why:'Every connection in this network passes through ACC — the constant thread across fifteen years of progress.'}, zh: {name:'阿德雷德會議中心', tag:'主辦方', overview:'十五年的永續發展領導地位。', contribution:'提供平台，讓每一個夥伴關係與活動齊聚一堂。', why:'這個網絡中的每一個連結都經過 ACC — 這是貫穿十五年進展的共同主線。'} },
+  { id: 'detmold', en: {name:'Detmold Group', tag:'Sustainable Packaging', overview:'Sustainable paper packaging.', contribution:'Supports responsible sourcing and circular materials.', why:'Packaging choices ripple across every event — Detmold keeps that footprint circular.'}, zh: {name:'Detmold 集團', tag:'永續包裝', overview:'永續紙本包裝。', contribution:'支持負責任的採購與循環材料。', why:'包裝的選擇會影響每一場活動 — Detmold 確保了這個足跡是循環的。'} },
+  { id: 'almondco', en: {name:'Almondco Australia', tag:'Local Food Systems', overview:'Locally grown almonds supplied through Australian growers.', contribution:'Represents resilient local food systems and shorter supply chains.', why:'Shorter supply chains mean fresher catering and a smaller transport footprint.'}, zh: {name:'Almondco 澳洲', tag:'在地食物系統', overview:'透過澳洲農民供應在地種植的杏仁。', contribution:'代表具韌性的在地食物系統與更短的供應鏈。', why:'更短的供應鏈意味著更新鮮的餐飲與更小的運輸碳足跡。'} },
+  { id: 'leed', en: {name:'Leed Engineering & Construction', tag:'Water Infrastructure', overview:'Sustainable water infrastructure.', contribution:'Develops infrastructure that strengthens community resilience.', why:"Resilient water systems underpin ACC's industry-leading efficiency."}, zh: {name:'Leed 工程建設', tag:'水利基礎設施', overview:'永續水利基礎設施。', contribution:'開發強化社區韌性的基礎設施。', why:'具韌性的水資源系統是 ACC 領先業界效率的基石。'} },
+  { id: 'indaily', en: {name:'InDaily', tag:'Storytelling', overview:"South Australia's business news voice.", contribution:"Connects South Australia's business community by recognising leadership.", why:'Shares the stories of innovation that keep the ecosystem visible and credible.'}, zh: {name:'InDaily', tag:'故事敘述', overview:'南澳的商業新聞之聲。', contribution:'透過表揚領導力來連結南澳的商業社群。', why:'分享創新故事，保持生態系的能見度與可信度。'} },
+  { id: 'hlb', en: {name:'HLB Mann Judd', tag:'Transparent Data', overview:'Independent business advisory.', contribution:'Provides independent data and transparent rankings.', why:'Evidence-based rankings keep every partner accountable to real outcomes.'}, zh: {name:'HLB Mann Judd', tag:'透明數據', overview:'獨立商業諮詢顧問。', contribution:'提供獨立數據與透明的排名。', why:'基於證據的排名讓每一位夥伴對真實成果負責。'} }
+];
+
+async function init() {
+  try {
+    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+      await signInWithCustomToken(auth, __initial_auth_token);
+    } else {
+      await signInAnonymously(auth);
+    }
+  } catch (e) {}
+  
+  onAuthStateChanged(auth, u => { user = u; });
+  
+  setupListeners();
+  renderStatic();
+  setupObserver();
+  initMap();
+  initLunch();
+  initEcoLayout();
+  window.addEventListener('resize', initEcoLayout);
+}
+
+async function track(event, data={}) {
+  if (!user) return;
+  try {
+    const p = typeof __firebase_config !== 'undefined' ? collection(db, 'artifacts', globalAppId, 'users', user.uid, 'tracking') : collection(db, 'tracking');
+    await addDoc(p, { event, data, timestamp: serverTimestamp(), url: window.location.href, userAgent: navigator.userAgent });
+  } catch(e) {}
+}
+
+function setupListeners() {
+  document.getElementById('langToggle').addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'zh' : 'en';
+    renderStatic();
+    updateDynamic();
+    track('toggle_language', { lang: currentLang });
+  });
+
+  document.querySelectorAll('.scroll-to').forEach(b => {
+    b.addEventListener('click', () => {
+      document.getElementById(b.dataset.target).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  document.querySelectorAll('.navdots button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.getElementById(b.dataset.id).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  document.getElementById('btnEditProfile').addEventListener('click', () => {
+    document.getElementById('profileView').style.display = 'none';
+    document.getElementById('profileForm').style.display = 'block';
+  });
+
+  document.getElementById('profileForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    state.profile.name = document.getElementById('inName').value || 'Zoe';
+    state.profile.role = document.getElementById('inRole').value;
+    state.profile.event = document.getElementById('inEvent').value;
+    document.getElementById('profileView').style.display = 'block';
+    document.getElementById('profileForm').style.display = 'none';
+    renderStatic();
+    track('update_profile', state.profile);
+  });
+
+  document.getElementById('inName').addEventListener('input', e => {
+    document.getElementById('formAvatar').textContent = e.target.value.charAt(0).toUpperCase() || '?';
+  });
+
+  document.getElementById('fileUpload').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if(!file) return;
+    state.file = file;
+    document.getElementById('dropzone').style.display = 'none';
+    document.getElementById('fcName').textContent = file.name;
+    document.getElementById('fcSize').textContent = (file.size / 1024 / 1024).toFixed(1);
+    document.getElementById('fileChip').style.display = 'flex';
+    document.getElementById('adelalaZone').style.display = 'flex';
+    track('upload_file', { name: file.name });
+    
+    setTimeout(() => {
+      state.aiTyped = false;
+      typeText('aiText', dict[currentLang].s3_ai_msg.replace('{name}', state.profile.name), 'aiCursor', () => {
+        state.aiTyped = true;
+        document.getElementById('s3Next').style.display = 'block';
+      }, 'aiTypingInterval');
+    }, 1200);
+  });
+
+  document.getElementById('closeEcoPanel').addEventListener('click', closeEcoPanel);
+  document.getElementById('scrim').addEventListener('click', () => {
+    closeEcoPanel();
+    document.querySelectorAll('.company-card').forEach(c => c.style.display = 'none');
+  });
+
+  document.getElementById('btnRestart').addEventListener('click', () => {
+    track('restart');
+    document.getElementById('s1').scrollIntoView({behavior:'smooth'});
+  });
+}
+
+function renderStatic() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    let t = dict[currentLang][el.dataset.i18n];
+    if(t) el.innerHTML = t;
+  });
+  
+  document.getElementById('pvName').textContent = state.profile.name;
+  document.getElementById('pvRole').textContent = state.profile.role;
+  document.getElementById('pvEvent').textContent = state.profile.event;
+  document.getElementById('profileAvatar').textContent = state.profile.name.charAt(0).toUpperCase() || '?';
+  document.getElementById('pvNeedsLabel').textContent = dict[currentLang].s2_needs.replace('{name}', state.profile.name);
+  document.getElementById('s6EventName').textContent = state.profile.event;
+  document.getElementById('s6NotifSub').textContent = dict[currentLang].s6_notif_sub.replace('{name}', state.profile.name);
+  document.getElementById('s6CompName').textContent = state.file ? state.file.name.replace(/\.[^/.]+$/, "") : dict[currentLang].s6_org_default;
+  document.getElementById('liName').textContent = state.profile.name;
+  document.getElementById('liRoleEvent').textContent = `${state.profile.role} · ${state.profile.event}`;
+
+  const themeSwitch = document.querySelector('section.in[id="s1"], section.in[id="s5"], section.in[id="s8"], section.in[id="s9"]');
+  if(themeSwitch) document.body.classList.add('dark-theme-mark');
+  else document.body.classList.remove('dark-theme-mark');
+}
+
+function updateDynamic() {
+  if (state.activeSpot) renderMapPanel(state.activeSpot);
+  updateMapTrack();
+  if (state.activeLunch) renderLunchCard(state.activeLunch);
+  if (state.activeEco) renderEcoContent(state.activeEco);
+  
+  const dg = document.getElementById('dashGrid');
+  dg.innerHTML = '';
+  dict[currentLang].dash.forEach(d => {
+    dg.innerHTML += `<div class="dash-tile in"><div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800">${d.l}</div><div style="font-size:25px;font-weight:800;color:var(--green);margin-top:6px">${d.n}</div><div style="font-size:12px;color:var(--muted);margin-top:3px">${d.s}</div></div>`;
+  });
+
+  const liTags = ['#Sustainability', '#ESG', '#SouthAustralia', '#AdelaideConventionCentre'].map(t => `<span style="font-size:11.5px;background:rgba(63,156,130,.12);color:var(--green);font-weight:700;padding:6px 12px;border-radius:20px">${t}</span>`).join('');
+  document.getElementById('liTags').innerHTML = liTags;
+
+  if (state.file) {
+    if (state.aiTyped) {
+      clearInterval(state.aiTypingInterval);
+      document.getElementById('aiCursor').style.display = 'none';
+      document.getElementById('aiText').textContent = dict[currentLang].s3_ai_msg.replace('{name}', state.profile.name);
+    }
+  }
+
+  const tagLi = document.getElementById('liText');
+  if (state.liTyped) {
+    clearInterval(state.liTypingInterval);
+    document.getElementById('liCursor').style.display = 'none';
+    tagLi.textContent = dict[currentLang].s7_msg.replace('{event}', state.profile.event);
+  }
+
+  initEcoLayout(); 
+}
+
+function setupObserver() {
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if(e.isIntersecting) {
+        e.target.classList.add('in', 'show');
+        if(e.target.id && e.target.id.startsWith('s')){
+          document.querySelectorAll('.navdots button').forEach(b => b.classList.remove('active'));
+          const dot = document.querySelector(`.navdots button[data-id="${e.target.id}"]`);
+          if(dot) dot.classList.add('active');
+          renderStatic();
+          track('view_scene', { scene: e.target.id });
+
+          if(e.target.id === 's6') document.getElementById('notifS6').classList.add('show');
+          if(e.target.id === 's7' && !state.liTyped) {
+            typeText('liText', dict[currentLang].s7_msg.replace('{event}', state.profile.event), 'liCursor', () => { state.liTyped = true; }, 'liTypingInterval');
+          }
+        }
+      }
+    });
+  }, {threshold: 0.2});
+  document.querySelectorAll('.rv, .scene').forEach(el => obs.observe(el));
+}
+
+function initMap() {
+  const mc = document.getElementById('mapCanvas');
+  mc.innerHTML = '';
+  Object.keys(mapData).forEach(k => {
+    const s = mapData[k];
+    const btn = document.createElement('button');
+    btn.className = 'hotspot';
+    btn.style.top = `${s.top}%`;
+    btn.style.left = `${s.left}%`;
+    btn.innerHTML = `<span class="pulse"></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">${s.icon}</svg>`;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.hotspot').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      state.spots.add(k);
+      state.activeSpot = k;
+      renderMapPanel(k);
+      updateMapTrack();
+      track('explore_map', { spot: k });
+    });
+    mc.appendChild(btn);
+  });
+}
+
+function renderMapPanel(k) {
+  const p = document.getElementById('mapPanel');
+  p.classList.remove('empty');
+  const d = mapData[k][currentLang];
+  let h = `<svg style="width:42px;height:42px;color:var(--green);margin-bottom:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">${mapData[k].icon}</svg>`;
+  h += `<div style="font-size:12px;color:var(--sand);font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-top:4px">${d.role}</div>`;
+  h += `<h3 style="font-size:22px;color:var(--deep)">${d.title}</h3>`;
+  h += `<p style="margin-top:14px;font-size:14.5px;line-height:1.6;color:var(--ink)">${d.story}</p>`;
+  h += `<div class="stat-row">`;
+  d.stats.forEach(st => {
+    h += `<div class="stat-pill"><div style="font-size:23px;font-weight:800;color:var(--green)">${st[0]}</div><div style="font-size:11px;color:var(--muted);margin-top:2px">${st[1]}</div></div>`;
+  });
+  h += `</div><div class="visited-track" id="vTrack"></div>`;
+  p.innerHTML = h;
+  updateMapTrack();
+}
+
+function updateMapTrack() {
+  const vt = document.getElementById('vTrack');
+  if(vt) {
+    vt.innerHTML = Object.keys(mapData).map(k => `<span class="vchip ${state.spots.has(k)?'on':''}">${mapData[k][currentLang].title}</span>`).join('');
+  }
+  const hint = document.getElementById('mapHint');
+  const btn = document.getElementById('btnS5');
+  if(state.spots.size >= 3) {
+    hint.textContent = dict[currentLang].s4_hint_ready.replace('{c}', state.spots.size);
+    btn.disabled = false;
+  } else {
+    hint.textContent = dict[currentLang].s4_hint_more.replace('{c}', state.spots.size);
+    btn.disabled = true;
+  }
+}
+
+function initLunch() {
+  const st = document.getElementById('lunchStage');
+  st.innerHTML = '';
+  const pts = [{t:20,l:10,d:0.2},{t:60,l:22,d:1.1},{t:30,l:78,d:0.6},{t:75,l:65,d:1.6},{t:12,l:50,d:0.9}];
+  pts.forEach(p => {
+    const d = document.createElement('div');
+    d.className = 'people-dot';
+    d.style = `top:${p.t}%;left:${p.l}%;animation-delay:${p.d}s`;
+    st.appendChild(d);
+  });
+  
+  const card = document.createElement('div');
+  card.className = 'company-card';
+  card.id = 'lunchCard';
+  st.appendChild(card);
+
+  Object.keys(lunchData).forEach(k => {
+    const b = document.createElement('button');
+    b.className = 'logo-bubble';
+    b.style = `top:${lunchData[k].top}%;left:${lunchData[k].left}%;animation-delay:${lunchData[k].delay}s`;
+    b.dataset.id = k;
+    st.appendChild(b);
+    b.addEventListener('click', () => {
+      state.activeLunch = k;
+      renderLunchCard(k);
+      track('view_lunch', { partner: k });
+    });
+  });
+  updateDynamic(); 
+}
+
+function renderLunchCard(k) {
+  const c = document.getElementById('lunchCard');
+  const d = lunchData[k][currentLang];
+  const t = lunchData[k].top;
+  const l = lunchData[k].left;
+  let h = `<button class="close" id="closeLunchCard">&times;</button>`;
+  h += `<div style="font-size:11.5px;color:var(--sand);font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-top:4px">${d.tag}</div>`;
+  h += `<h4 style="font-size:17px;color:var(--deep)">${d.name}</h4>`;
+  h += `<ul style="margin:14px 0 0;padding-left:18px;font-size:13.5px;line-height:1.6;color:var(--ink)">${d.points.map(p=>`<li>${p}</li>`).join('')}</ul>`;
+  c.innerHTML = h;
+  c.style.top = `${t}%`;
+  c.style.left = `${l}%`;
+  c.style.display = 'block';
+  c.style.animation = 'chipIn .3s var(--ease)';
+  document.getElementById('closeLunchCard').addEventListener('click', e => {
+    e.stopPropagation();
+    c.style.display = 'none';
+    state.activeLunch = null;
+  });
+}
+
+function initEcoLayout() {
+  const cvs = document.getElementById('ecoCanvas');
+  const lines = document.getElementById('ecoLines');
+  const rect = cvs.getBoundingClientRect();
+  if(rect.width === 0) return; 
+  const CX = rect.width / 2;
+  const CY = rect.height / 2;
+  const R = Math.min(rect.width, rect.height) * 0.36;
+  
+  cvs.querySelectorAll('.eco-node').forEach(n => n.remove());
+  lines.innerHTML = '';
+  
+  const others = ecoData.filter(x => !x.center);
+  ecoData.forEach(d => {
+    let x = CX, y = CY;
+    if(!d.center) {
+      const idx = others.findIndex(o => o.id === d.id);
+      const angle = (idx / others.length) * Math.PI * 2 - Math.PI / 2;
+      x = CX + R * Math.cos(angle);
+      y = CY + R * Math.sin(angle);
+      const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      l.setAttribute('x1', CX); l.setAttribute('y1', CY);
+      l.setAttribute('x2', x); l.setAttribute('y2', y);
+      if(document.getElementById('s8').classList.contains('in')) l.classList.add('show');
+      lines.appendChild(l);
+    }
+    const b = document.createElement('button');
+    b.className = `eco-node ${d.center ? 'center' : ''} ${document.getElementById('s8').classList.contains('in') ? 'show' : ''}`;
+    b.style.left = `${x - (d.center ? 54 : 39)}px`;
+    b.style.top = `${y - (d.center ? 54 : 39)}px`;
+    const name = d[currentLang].name;
+    b.textContent = d.center ? name.split(' ').slice(0,2).join(' ') : name;
+    b.addEventListener('click', () => {
+      state.activeEco = d.id;
+      renderEcoContent(d.id);
+      document.getElementById('ecoPanel').classList.add('open');
+      document.getElementById('scrim').classList.add('show');
+      track('view_eco', { partner: d.id });
+    });
+    cvs.appendChild(b);
+  });
+  
+  document.querySelectorAll('.logo-bubble').forEach(b => {
+    b.textContent = lunchData[b.dataset.id][currentLang].name;
+  });
+}
+
+function renderEcoContent(id) {
+  const d = ecoData.find(x => x.id === id)[currentLang];
+  const c = document.getElementById('ecoPanelContent');
+  let h = `<div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sand);font-weight:800">${d.tag}</div>`;
+  h += `<h3 style="font-size:22px;color:var(--deep);margin-top:8px">${d.name}</h3>`;
+  h += `<div style="margin-top:20px"><div style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px">${dict[currentLang].s8_overview}</div><p style="font-size:14.5px;line-height:1.6;color:var(--ink)">${d.overview}</p></div>`;
+  h += `<div style="margin-top:20px"><div style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px">${dict[currentLang].s8_contrib}</div><p style="font-size:14.5px;line-height:1.6;color:var(--ink)">${d.contribution}</p></div>`;
+  h += `<div style="margin-top:20px"><div style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px">${dict[currentLang].s8_why}</div><p style="font-size:14.5px;line-height:1.6;color:var(--ink)">${d.why}</p></div>`;
+  c.innerHTML = h;
+}
+
+function closeEcoPanel() {
+  document.getElementById('ecoPanel').classList.remove('open');
+  document.getElementById('scrim').classList.remove('show');
+  state.activeEco = null;
+}
+
+function typeText(elId, txt, cursorId, onComplete, intKey) {
+  const el = document.getElementById(elId);
+  const cur = document.getElementById(cursorId);
+  if(cur) cur.style.display = 'inline-block';
+  el.textContent = '';
+  let i = 0;
+  clearInterval(state[intKey]);
+  state[intKey] = setInterval(() => {
+    if(i < txt.length) {
+      el.textContent = txt.slice(0, i+1);
+      i++;
+    } else {
+      clearInterval(state[intKey]);
+      if(cur) cur.style.display = 'none';
+      if(onComplete) onComplete();
+    }
+  }, 16);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
